@@ -1,60 +1,110 @@
-# AI-Powered Personal Finance Manager 🚀
+# AI-Powered Personal Finance Manager
 
-A modern, intelligent personal finance management system that helps users track expenses, analyze spending patterns, and make better financial decisions using artificial intelligence.
+A comprehensive personal finance management system with AI-powered features for transaction categorization and receipt processing.
 
-## 🌟 Features
+## Features
 
-- **Smart Receipt Processing**: OCR-powered receipt scanning and data extraction
-- **AI-Powered Categorization**: Automatic transaction categorization using machine learning
-- **Intelligent Budget Recommendations**: Personalized budget suggestions based on spending patterns
-- **Interactive Dashboard**: Beautiful visualizations of financial data
-- **Expense Analytics**: Detailed analysis of spending habits with AI-driven insights
-- **Secure Authentication**: Multi-factor authentication for enhanced security
+- User authentication with password reset
+- Transaction management
+- AI-powered transaction categorization
+- Receipt processing with OCR
+- Data visualization
+- Export functionality (CSV, Excel, JSON)
+- Mobile-responsive design
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
-- Python 3.11+
 - FastAPI
-- PostgreSQL
-- Redis
-- TensorFlow/PyTorch
+- SQLite
+- SQLAlchemy
+- OpenAI
 - Tesseract OCR
 
 ### Frontend
-- React 18
+- React
+- Material-UI
+- Recharts
 - TypeScript
-- Tailwind CSS
-- Chart.js
-- Redux Toolkit
 
-## 🚀 Getting Started
+## Setup
 
-### Prerequisites
-- Python 3.11+
-- Node.js 18+
-- PostgreSQL
-- Redis
+### Backend Setup
 
-### Installation
-
-1. Clone the repository
-2. Set up backend:
+1. Navigate to backend directory:
 ```bash
 cd backend
+```
+
+2. Create and activate virtual environment:
+```bash
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
 pip install -r requirements.txt
 ```
 
-3. Set up frontend:
+4. Create .env file:
+```bash
+cp .env.example .env
+```
+
+5. Run migrations:
+```bash
+alembic upgrade head
+```
+
+6. Start the server:
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+
+### Frontend Setup
+
+1. Navigate to frontend directory:
 ```bash
 cd frontend
+```
+
+2. Install dependencies:
+```bash
 npm install
+```
+
+3. Create .env file:
+```bash
+cp .env.example .env
+```
+
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-## 👤 Author
+## API Documentation
 
-Yash Shah
-- GitHub: [@yds233013](https://github.com/yds233013) 
+Once the backend is running, visit:
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
+
+## Environment Variables
+
+### Backend
+- `DATABASE_URL`: SQLite database URL
+- `SECRET_KEY`: JWT secret key
+- `OPENAI_API_KEY`: OpenAI API key
+- `SMTP_*`: Email configuration
+
+### Frontend
+- `VITE_API_URL`: Backend API URL
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request 
